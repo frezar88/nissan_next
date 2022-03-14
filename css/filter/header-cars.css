@@ -1,0 +1,130 @@
+.header-cars {
+    display: none;
+     background-color: #ffffff;
+    padding-bottom: 10px;
+}
+.header-cars__wrapper {
+    max-width: 1520px;
+    margin: 0 auto;
+    width: 100%;
+       padding: 15px;
+}
+.header-cars__title {
+    padding: 15px;
+}
+.header-cars__title h2 {
+    font-size: 36px;
+    font-weight: 600;
+}
+.header-cars-content {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: scroll;
+}
+.header-cars-content__item {
+    transition: 0.3s;
+    position: relative;
+    cursor: pointer;
+    min-width: 250px;
+}
+
+.header-cars-content__item.active::before {
+    transition: 0.3s;
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #c3002f;
+    border-radius: 50%;
+    transform: translate(20px, 10px);
+}
+.header-cars-content__item.active::after {
+    transition: 0.3s;
+    content: url(../../images/filter/accept-arrow-red.svg);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background-color: #c3002f;
+    border-radius: 50%;
+    transform: translate(20px, 10px);
+}
+.header-cars-content__item p {
+    font-size: 16px;
+    transform: translateX(15px);
+}
+.header-cars-content__item img {
+    width: 100%;
+    max-width: 200px;
+}
+
+.header-cars-content::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+.header-cars-content::-webkit-scrollbar-track-piece {
+    background-color: #ffffff;
+}
+.header-cars-content::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: #666;
+    border-radius: 3px;
+}
+.header-cars-content::-webkit-scrollbar-corner {
+    background-color: #999;
+}
+.header-cars-content::-webkit-resizer {
+    background-color: #666;
+}
+
+@media (max-width: 720px) {
+    .header-cars-content__item.active::before {
+        transition: 0.3s;
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: #c3002f;
+        border-radius: 50%;
+    }
+    .header-cars-content__item.firstLoad {
+    order: -1;
+}
+    .header-cars-content__item.active::after {
+        transition: 0.3s;
+     
+        content: url(../../images/filter/header-car-slider/accept-arrow-red.svg);
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        background-color: #c3002f;
+        border-radius: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-cars-content__item p {
+        font-size: 12px !important;
+    }
+}
+@media (max-width: 480px) {
+    .header-cars__title h2 {
+        font-size: 28px;
+    }
+    .header-cars-content__item p {
+        font-size: 12px;
+    }
+}
+@media (max-width: 450px) {
+    .header-cars-content__item p {
+        font-size: 10px !important ;
+    }
+}
+@media (max-width: 365px) {
+    .header-cars__title h2 {
+        font-size: 28px;
+    }
+    .header-cars-content__item p {
+        font-size: 10px;
+    }
+}

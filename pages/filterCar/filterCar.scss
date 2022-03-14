@@ -1,0 +1,341 @@
+@import "../../null_style_scss/nullstyle";
+
+@font-face {
+    font-family: Iconfont;
+    src: url(../fonts/Iconfont.woff2);
+}
+
+@font-face {
+    font-family: NissanBrand-Regular;
+    src: url(../fonts/NissanBrand-300.woff2);
+}
+
+@font-face {
+    font-family: NissanBrand-Bold;
+    src: url(../fonts/NissanBrand-400.woff2);
+}
+
+@font-face {
+    font-family: NissanBrand-Bolder;
+    src: url(../fonts/NissanBrand-700.woff2);
+}
+
+body {
+    background: #ebebeb;
+}
+
+.wrapper {
+    font-family: NissanBrand-Regular;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    max-width: 1150px;
+    width: 100%;
+    margin: 0 auto;
+}
+.item {
+    background-color: #fff;
+    &__img {
+        img {
+            width: 100%;
+        }
+    }
+    &__wrapper {
+        padding: 20px;
+    }
+    &__name-info-content {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__name-info {
+        max-width: 310px;
+        p {
+            font-size: 13px;
+            color: gray;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            &:nth-child(1) {
+                padding-right: 10px;
+                font-size: 19px;
+                color: #000;
+                span {
+                    margin-left: 5px;
+                    color: gray;
+                }
+            }
+            &:nth-child(2) {
+                padding: 0 15px;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    right: 0;
+                    border-radius: 15px;
+                    width: 1px;
+                    height: 12px;
+                    background-color: gray;
+                    display: block;
+                }
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    border-radius: 15px;
+                    width: 1px;
+                    height: 12px;
+                    background-color: gray;
+                    display: block;
+                }
+            }
+            &:nth-child(3) {
+                margin-left: 30px;
+                &::after {
+                    position: absolute;
+                    content: "";
+                    left: -15px;
+                    border-radius: 50%;
+                    bottom: calc(50% - 6px);
+                    width: 10px;
+                    height: 10px;
+                    background-color: rgb(61, 167, 0);
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__count-options {
+        font-size: 13px;
+        margin-top: 15px;
+        p {
+            color: gray;
+            span {
+                color: red;
+                font-family: NissanBrand-Bold;
+            }
+        }
+    }
+
+    &__features {
+        margin-top: 15px;
+        ul {
+            li {
+                display: flex;
+                margin: 10px 0;
+                padding-left: 25px;
+                position: relative;
+
+                P {
+                    font-size: 11px;
+                    padding: 0 5px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    &:nth-child(2)::before {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        border-radius: 15px;
+                        width: 2px;
+                        height: 11px;
+                        background-color: gray;
+                        display: block;
+                    }
+                    &:nth-child(2)::after {
+                        position: absolute;
+                        content: "";
+                        right: 0;
+                        border-radius: 15px;
+                        width: 2px;
+                        height: 11px;
+                        background-color: gray;
+                        display: block;
+                    }
+                }
+                &:nth-child(1) p,
+                &:nth-child(2) p,
+                &:nth-child(3) p,
+                &:nth-child(4) p {
+                    font-family: NissanBrand-Bold;
+                }
+
+                &:nth-child(1)::before,
+                &:nth-child(2)::before,
+                &:nth-child(3)::before,
+                &:nth-child(4)::before {
+                    position: absolute;
+                    display: block;
+                    font-family: Iconfont !important;
+                    left: 0;
+                    top: -5px;
+                    font-size: 20px;
+                    color: gray;
+                }
+                &:nth-child(1)::before {
+                     content: "\F156";
+                }
+                &:nth-child(2)::before {
+                     content:"\F15C";
+                }
+                &:nth-child(3)::before {
+                   content: "\F161";
+                }
+                &:nth-child(4)::before {
+                   content:url('../../images/Screenshot_4.png') ;
+                   left: 1px;
+
+                }
+            }
+        }
+    }
+
+    &__switch-block {
+          margin-top: 25px;
+    }
+
+    &__price-credit {
+    }
+
+    &__trade-credit {
+    }
+
+    &__price-block,&__primery-price {
+        margin-top: 25px;
+        font-family: NissanBrand-Regular;
+        display: flex ;
+        grid-gap: 20px;
+        align-items: center;
+        p{
+             font-size: 25px;
+            color: #222;
+            &:first-child{
+               font-size: 25px;
+               font-family: NissanBrand-Regular;
+            }
+            &:last-child{
+                position: relative;
+                     font-size: 20px;
+                text-decoration: line-through;
+                color: rgb(161, 161, 161);
+                &::before{
+                    position: absolute;
+                    content: url('../../images/Screenshot_1.png');
+                    right: -22px;
+                    top: -5px;
+                }
+            }
+        }
+
+    }
+    
+
+    
+    &__location {
+        margin-top: 25px;
+        p{
+            position: relative;
+            color: gray;
+            padding-left: 20px;
+            font-family: NissanBrand-Bold;
+            &::before{
+                position: absolute;
+                left: -3px;
+                content: url('../../images/Screenshot_2.png');
+                top:-2px;
+                transform: scale(0.8 );
+            }
+            
+        }
+    }
+}
+
+
+
+.header__trade-in,.header__price-in {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 10px;
+}
+
+.header__trade-in a {
+    color: #222;
+    text-decoration: underline;
+}
+
+.trade-in__switch {
+    margin-left: 0px;
+}
+
+.trade-in__switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.trade-in__switch input {
+    display: none;
+}
+
+
+/* ///////////////////////////////////////////////// */
+
+.trade-in__text {
+    padding: 0 15px;
+}
+
+.trade-in__text h5 {
+   
+}
+.slider {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    cursor: unset;
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #ff0000;
+}
+
+input:focus+.slider {
+    -webkit-box-shadow: 0 0 1px #ff0000;
+    box-shadow: 0 0 1px #ff0000;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(14px);
+    transform: translateX(14px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}

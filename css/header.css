@@ -1,0 +1,661 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after :focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/* -------fonts------ */
+@font-face {
+  font-family: Iconfont;
+  src: url(../fonts/Iconfont.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Regular;
+  src: url(../fonts/NissanBrand-300.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Bold;
+  src: url(../fonts/NissanBrand-400.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Bolder;
+  src: url(../fonts/NissanBrand-700.woff2);
+}
+
+/*--------------------*/
+.header {
+  font-family: NissanBrand-Regular;
+  position: relative;
+}
+
+.header-top-list {
+  background: #333;
+}
+
+.header-top-list__wrapper {
+  padding: 0 50px;
+}
+
+.header-top-list__ul {
+  padding: 3px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-top-list__ul li {
+  color: #fff;
+}
+
+.header-top-list__ul li a {
+  padding: 10 10px 10px 10px;
+  font-family: NissanBrand-Bold;
+  color: #fff;
+  font-size: 12px;
+}
+
+.header-top-list__ul li:nth-child(2) {
+  padding: 10px 15px;
+  border-left: solid 1px #fff;
+  border-right: solid 1px #fff;
+}
+
+.header-top-list__ul li:nth-child(1) {
+  padding: 10px 15px 10px 0;
+}
+
+.header-top-list__ul li:nth-child(3) {
+  padding: 10px 0 10px 15px;
+}
+
+.header-top-list__ul li:hover a {
+  text-decoration: underline;
+}
+
+.header-nav__wrapper {
+  padding: 0 50px;
+}
+
+.header-nav__logo {
+  padding: 20px 0;
+}
+
+.header-nav__logo a img {
+  width: 68px;
+  max-width: 68px;
+}
+
+.header-nav__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr;
+  grid-gap: 40px;
+}
+
+.header-nav-container__info {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-nav-container__info div {
+  padding: 10px 0;
+}
+
+.header-nav-container__info div a {
+  font-size: 14px;
+  font-family: NissanBrand-Bold;
+  color: #222;
+}
+
+.header-nav-container__info div:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 50px;
+}
+
+.header-nav-container__info div:last-child a {
+  position: relative;
+}
+
+.header-nav-container__info div:last-child a:first-child {
+  text-decoration: underline;
+}
+
+.header-nav-container__info div:last-child a:first-child::before {
+  position: absolute;
+  content: "\F136";
+  left: -25px;
+  top: -3px;
+  font-family: Iconfont !important;
+  color: #adadad;
+  font-size: 20px;
+}
+
+.header-nav-container__info div:last-child a:last-child::before {
+  position: absolute;
+  content: "\F134";
+  left: -25px;
+  top: -3px;
+  font-family: Iconfont !important;
+  color: #adadad;
+  font-size: 20px;
+}
+
+.header-nav-container__menu {
+  border-top: 1px solid #000;
+  padding: 20px 10px;
+}
+
+.header-nav-container__menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  grid-gap: 60px;
+}
+
+.header-nav-container__menu ul li {
+  position: relative;
+  font-family: NissanBrand-Bold;
+  cursor: pointer;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.header-nav-container__menu ul li:hover {
+  color: #c3002f;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.header-nav-container__menu ul li:nth-child(3)::after, .header-nav-container__menu ul li:nth-child(4)::after, .header-nav-container__menu ul li:nth-child(5)::after, .header-nav-container__menu ul li:nth-child(6)::after {
+  right: -20px;
+  position: absolute;
+  content: "\F104";
+  font-family: Iconfont !important;
+}
+
+.header-nav-container__menu ul li.active {
+  font-family: NissanBrand-Bold;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #c3002f;
+}
+
+.header-nav-mobile {
+  display: none;
+}
+
+.header-nav-mobile__wrapper {
+  padding: 10px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-nav-mobile__first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header-nav-mobile__first a {
+  font-size: 10px;
+  font-family: NissanBrand-Bold;
+  color: #000;
+}
+
+.header-nav-mobile__second {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-nav-mobile__second div {
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header-nav-mobile__second div a {
+  position: relative;
+}
+
+.header-nav-mobile__second div a:before {
+  position: absolute;
+  font-family: Iconfont !important;
+  top: -10px;
+  left: -10px;
+  font-size: 20px;
+  color: #000;
+}
+
+.header-nav-mobile__second div:nth-child(1) a::before {
+  content: "\F136";
+}
+
+.header-nav-mobile__second div:nth-child(2) {
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.header-nav-mobile__second div:nth-child(2) a::before {
+  content: "\F134";
+}
+
+.header-nav-mobile__second div:nth-child(3) a::before {
+  content: "\F10C";
+}
+
+.accord-info {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  z-index: 10000;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.7) 0px 89px 70px -60px !important;
+          box-shadow: rgba(0, 0, 0, 0.7) 0px 89px 70px -60px !important;
+  -webkit-transition: opacity, max-height 0.5s;
+  transition: opacity, max-height 0.5s;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.accord-wrapper {
+  max-width: 1570px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.menu-car-list,
+.menu-service {
+  display: none;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.menu-car-list__item a,
+.menu-service__item a {
+  text-align: center;
+  color: #222;
+  font-size: 20px;
+}
+
+.menu-car-list__item p,
+.menu-service__item p {
+  margin-top: 15px;
+  text-align: center;
+  padding-bottom: 40px;
+  color: #999;
+  font-size: 14px;
+}
+
+.menu-car-list__item img,
+.menu-service__item img {
+  max-width: 350px;
+  width: 100%;
+}
+
+.menu-buy,
+.menu-service,
+.menu-about {
+  display: none;
+}
+
+.menu-buy__wrapper,
+.menu-service__wrapper,
+.menu-about__wrapper {
+  padding: 0 50px;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.menu-buy__list,
+.menu-service__list,
+.menu-about__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.menu-buy__list-top,
+.menu-service__list-top,
+.menu-about__list-top {
+  font-family: NissanBrand-Bold;
+  padding-top: 20px;
+  max-width: 300px;
+}
+
+.menu-buy__list-top div,
+.menu-service__list-top div,
+.menu-about__list-top div {
+  padding-bottom: 5px;
+}
+
+.menu-buy__list-top div a,
+.menu-service__list-top div a,
+.menu-about__list-top div a {
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.644);
+  font-size: 16px;
+}
+
+.menu-buy__list-top div:last-child,
+.menu-service__list-top div:last-child,
+.menu-about__list-top div:last-child {
+  padding-top: 15px;
+}
+
+.menu-buy__list-top a,
+.menu-service__list-top a,
+.menu-about__list-top a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  line-height: 15px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.menu-buy__list-top li,
+.menu-service__list-top li,
+.menu-about__list-top li {
+  margin: 10px 0;
+}
+
+.menu-buy__list-top a:hover,
+.menu-service__list-top a:hover,
+.menu-about__list-top a:hover {
+  color: #c3002f;
+}
+
+.mobile-menu-block {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.26);
+  z-index: 11111111111111;
+}
+
+.mobile-menu-block__wrapper {
+  overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateX(-10000px);
+          transform: translateX(-10000px);
+  padding: 20px;
+  max-width: 320px;
+  width: 100%;
+  background-color: #fff;
+  height: 100%;
+}
+
+.mobile-menu-block__wrapper .btn-close-cross {
+  max-width: 25px;
+  cursor: pointer;
+  position: relative;
+}
+
+.mobile-menu-block__wrapper .btn-close-cross:hover {
+  color: #c3002f;
+}
+
+.mobile-menu-block__wrapper .btn-close-cross::before {
+  content: "\F10F";
+  display: block;
+  font-family: Iconfont;
+  font-size: 25px;
+}
+
+.mobile-menu-block__general-menu {
+  padding-top: 20px;
+}
+
+.mobile-menu-block__general-menu li {
+  padding: 10px 5px;
+  position: relative;
+  border-bottom: solid 1px black;
+  line-height: 1.5;
+  border-bottom: 1px solid #c3c3c3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.mobile-menu-block__general-menu li a {
+  width: 100%;
+  font-size: 16px;
+  color: #222;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.mobile-menu-block__general-menu li a:hover {
+  color: #c3002f;
+}
+
+.mobile-menu-block__general-menu li:nth-child(3), .mobile-menu-block__general-menu li:nth-child(4), .mobile-menu-block__general-menu li:nth-child(5), .mobile-menu-block__general-menu li:nth-child(6) {
+  padding: 5px 5px;
+}
+
+.mobile-menu-block__general-menu li:nth-child(3)::after, .mobile-menu-block__general-menu li:nth-child(4)::after, .mobile-menu-block__general-menu li:nth-child(5)::after, .mobile-menu-block__general-menu li:nth-child(6)::after {
+  content: "\F106";
+  font-family: Iconfont !important;
+  font-size: 22px;
+  display: block;
+}
+
+.mobile-menu-block__general-menu li:hover::after {
+  color: #c3002f;
+}
+
+.mobile-menu-block__info-menu {
+  margin-top: 30px;
+}
+
+.mobile-menu-block__info-menu ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.mobile-menu-block__info-menu ul li a {
+  font-size: 16px;
+  color: #222;
+  margin: auto 0;
+}
+
+.mobile-menu-block__info-menu ul li a:first-child:hover {
+  text-decoration: underline;
+}
+
+.mobile-menu-block__info-menu ul li::before {
+  font-size: 24px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: Iconfont !important;
+  top: -50px;
+}
+
+.mobile-menu-block__info-menu ul li:first-child::before {
+  content: "\F134";
+}
+
+.mobile-menu-block__info-menu ul li:nth-child(2)::before {
+  content: "\F147";
+}
+
+.mobile-menu-block__info-menu ul li:last-child::before {
+  content: "\F136";
+}
+
+.mobile-menu-block__info-menu ul li:last-child a {
+  text-decoration: underline;
+}
+
+@media (max-width: 1240px) {
+  .header-nav-container__menu ul {
+    grid-gap: 40px;
+  }
+  .header-nav {
+    display: none;
+  }
+  .header-nav-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 1025px) {
+  .header-top-list__wrapper {
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-top-list {
+    display: none;
+  }
+  .header-nav-mobile__second div:nth-child(2) {
+    display: none;
+  }
+  .header-nav-mobile__second div:nth-child(3) {
+    border-left: 1px solid #000;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-menu-block__wrapper {
+    max-width: calc(100% - 40px);
+  }
+}

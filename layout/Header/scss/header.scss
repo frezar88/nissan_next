@@ -1,0 +1,439 @@
+@import "../../../null_style_scss/nullstyle";
+
+.header {
+    font-family: NissanBrand-Regular;
+    position: relative;
+}
+.header-top-list {
+    background: #333;
+    &__wrapper {
+        padding: 0 50px;
+    }
+    &__ul {
+        padding: 3px 0;
+        display: flex;
+        li {
+            color: #fff;
+            a {
+                padding: 10 10px 10px 10px;
+                font-family: NissanBrand-Bold;
+                color: #fff;
+                font-size: 12px;
+            }
+            &:nth-child(2) {
+                padding: 10px 15px;
+                border-left: solid 1px #fff;
+                border-right: solid 1px #fff;
+            }
+            &:nth-child(1) {
+                padding: 10px 15px 10px 0;
+            }
+            &:nth-child(3) {
+                padding: 10px 0 10px 15px;
+            }
+            &:hover a {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+.header-nav {
+    &__wrapper {
+        padding: 0 50px;
+    }
+
+    &__logo {
+        padding: 20px 0;
+        a {
+            img {
+                width: 68px;
+                max-width: 68px;
+            }
+        }
+    }
+}
+.header-nav__wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 40px;
+}
+.header-nav-container {
+    &__info {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div {
+            padding: 10px 0;
+            a {
+                font-size: 14px;
+                font-family: NissanBrand-Bold;
+                color: #222;
+            }
+        }
+        div:last-child {
+            display: flex;
+            grid-gap: 50px;
+            a {
+                position: relative;
+            }
+            a:first-child {
+                text-decoration: underline;
+            }
+            a:first-child::before {
+                position: absolute;
+                content: "\F136";
+                left: -25px;
+                top: -3px;
+                font-family: Iconfont !important;
+                color: rgb(173, 173, 173);
+                font-size: 20px;
+            }
+            a:last-child::before {
+                position: absolute;
+                content: "\F134";
+                left: -25px;
+                top: -3px;
+                font-family: Iconfont !important;
+                color: rgb(173, 173, 173);
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__menu {
+        border-top: 1px solid #000;
+        padding: 20px 10px;
+        ul {
+            display: flex;
+            justify-content: flex-end;
+            grid-gap: 60px;
+            li {
+                position: relative;
+                font-family: NissanBrand-Bold;
+                cursor: pointer;
+                transition: color 0.3s;
+                &:hover {
+                    color: #c3002f;
+                    transition: color 0.3s;
+                }
+
+                &:nth-child(3)::after,
+                &:nth-child(4)::after,
+                &:nth-child(5)::after,
+                &:nth-child(6)::after {
+                    right: -20px;
+                    position: absolute;
+                    content: "\F104";
+                    font-family: Iconfont !important;
+                }
+            }
+            li.active {
+                font-family: NissanBrand-Bold;
+                cursor: pointer;
+                transition: 0.3s;
+                color: #c3002f;
+            }
+        }
+    }
+}
+.header-nav-mobile {
+    display: none;
+    &__wrapper {
+        padding: 10px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__first {
+        display: flex;
+        grid-gap: 15px;
+        align-items: center;
+        a {
+            font-size: 10px;
+            font-family: NissanBrand-Bold;
+            color: #000;
+        }
+    }
+    &__second {
+        display: flex;
+        justify-content: space-between;
+        div {
+            padding: 20px;
+            box-sizing: border-box;
+            a {
+                position: relative;
+            }
+            a:before {
+                position: absolute;
+                font-family: Iconfont !important;
+                top: -10px;
+                left: -10px;
+                font-size: 20px;
+                color: #000;
+            }
+        }
+        div:nth-child(1) a::before {
+            content: "\F136";
+        }
+        div:nth-child(2) {
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+
+            a::before {
+                content: "\F134";
+            }
+        }
+        div:nth-child(3) a::before {
+            content: "\F10C";
+        }
+    }
+}
+
+.accord-info {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 10000;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 89px 70px -60px !important;
+    transition: opacity, max-height 0.5s;
+    max-height: 0;
+    overflow: hidden;
+}
+.accord-wrapper {
+    max-width: 1570px;
+    width: 100%;
+    margin: 0 auto;
+}
+.menu-car-list,
+.menu-service {
+    display: none;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+
+    &__item {
+        a {
+            text-align: center;
+            color: #222;
+            font-size: 20px;
+        }
+        p {
+            margin-top: 15px;
+            text-align: center;
+            padding-bottom: 40px;
+            color: #999;
+            font-size: 14px;
+        }
+        img {
+            max-width: 350px;
+            width: 100%;
+        }
+    }
+}
+
+.menu-buy,
+.menu-service,
+.menu-about {
+    display: none;
+    &__wrapper {
+        padding: 0 50px;
+        padding-bottom: 30px;
+        width: 100%;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__list-top {
+        font-family: NissanBrand-Bold;
+        padding-top: 20px;
+        max-width: 300px;
+        div {
+            padding-bottom: 5px;
+            a {
+                font-weight: normal;
+                color: rgba(0, 0, 0, 0.644);
+                font-size: 16px;
+            }
+            &:last-child {
+                padding-top: 15px;
+            }
+        }
+        a {
+            font-size: 14px;
+            font-weight: 400;
+            color: #000;
+            line-height: 15px;
+            transition: 0.3s;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a:hover {
+            color: #c3002f;
+        }
+    }
+}
+
+.mobile-menu-block {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.26);
+    z-index: 11111111111111;
+    &__wrapper {
+        overflow: hidden;
+        transition: 0.3s;
+        transform: translateX(-10000px);
+        padding: 20px;
+        // max-width: calc(100% - 40px);
+        max-width: 320px;
+        width: 100%;
+        background-color: #fff;
+        height: 100%;
+        .btn-close-cross {
+            max-width: 25px;
+            cursor: pointer;
+            position: relative;
+            &:hover {
+                color: #c3002f;
+            }
+            &::before {
+                content: "\F10F";
+                display: block;
+                font-family: Iconfont;
+                font-size: 25px;
+            }
+        }
+    }
+    &__general-menu {
+        padding-top: 20px;
+        li {
+            padding: 10px 5px;
+            position: relative;
+            border-bottom: solid 1px black;
+            line-height: 1.5;
+            border-bottom: 1px solid #c3c3c3;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: 0.3s;
+            a {
+                width: 100%;
+                font-size: 16px;
+                color: #222;
+                transition: 0.3s;
+                &:hover {
+                    color: #c3002f;
+                }
+            }
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                padding: 5px 5px;
+            }
+            &:nth-child(3)::after,
+            &:nth-child(4)::after,
+            &:nth-child(5)::after,
+            &:nth-child(6)::after {
+                content: "\F106";
+                font-family: Iconfont !important;
+                font-size: 22px;
+
+                display: block;
+            }
+            &:hover {
+                &::after {
+                    color: #c3002f;
+                }
+            }
+        }
+    }
+    &__info-menu {
+        margin-top: 30px;
+        ul {
+            li {
+                display: flex;
+                grid-gap: 10px;
+                margin-bottom: 10px;
+                position: relative;
+                line-height: 1.7;
+                font-size: 16px;
+                a {
+                    font-size: 16px;
+                    color: #222;
+                    margin: auto 0;
+                    &:first-child:hover{
+                        text-decoration: underline;
+                    }
+                }
+                &::before {
+                    font-size: 24px ;
+                    align-items: center;
+                    font-family: Iconfont !important;
+                    top: -50px;
+                }
+                &:first-child::before {
+                    content: "\F134";
+                }
+                &:nth-child(2)::before {
+                    content: "\F147";
+                }
+                &:last-child::before {
+                    content: "\F136";
+                }
+                &:last-child a{
+                    text-decoration: underline;
+                }
+                
+
+                
+               
+            }
+        }
+    }
+}
+
+@media (max-width: 1240px) {
+    .header-nav-container__menu ul {
+        grid-gap: 40px;
+    }
+    .header-nav {
+        display: none;
+    }
+    .header-nav-mobile {
+        display: block;
+    }
+}
+
+@media (max-width: 1025px) {
+    .header-top-list__wrapper {
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top-list {
+        display: none;
+    }
+    .header-nav-mobile__second div:nth-child(2) {
+        display: none;
+    }
+
+    .header-nav-mobile__second div:nth-child(3) {
+        border-left: 1px solid #000;
+    }
+}
+
+@media(max-width:480px){
+    .mobile-menu-block__wrapper{
+         max-width: calc(100% - 40px);
+    }
+}

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="../../css/filterCar.css"> -->
+    <style>
+        @charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after :focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/* -------fonts------ */
+@font-face {
+  font-family: Iconfont;
+ 
+  src: url(/fonts/Iconfont.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Regular;
+  src: url(/fonts/NissanBrand-300.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Bold;
+  src: url(/fonts/NissanBrand-400.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Bolder;
+  src: url(/fonts/NissanBrand-700.woff2);
+}
+
+/*--------------------*/
+@font-face {
+  font-family: Iconfont;
+  src: url(/fonts/Iconfont.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Regular;
+  src: url(/fonts/NissanBrand-300.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Bold;
+  src: url(/fonts/NissanBrand-400.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Bolder;
+  src: url(/fonts/NissanBrand-700.woff2);
+}
+
+body {
+  background: #ebebeb;
+}
+
+.wrapper {
+  font-family: NissanBrand-Regular;
+  padding: 25px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  max-width: 1150px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: #fff;
+}
+
+.item__img img {
+  width: 100%;
+}
+
+.item__wrapper {
+  padding: 20px;
+}
+
+.item__name-info-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.item__name-info {
+  max-width: 310px;
+}
+
+.item__name-info p {
+  font-size: 13px;
+  color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.item__name-info p:nth-child(1) {
+  padding-right: 10px;
+  font-size: 19px;
+  color: #000;
+}
+
+.item__name-info p:nth-child(1) span {
+  margin-left: 5px;
+  color: gray;
+}
+
+.item__name-info p:nth-child(2) {
+  padding: 0 15px;
+}
+
+.item__name-info p:nth-child(2)::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  border-radius: 15px;
+  width: 1px;
+  height: 12px;
+  background-color: gray;
+  display: block;
+}
+
+.item__name-info p:nth-child(2)::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  border-radius: 15px;
+  width: 1px;
+  height: 12px;
+  background-color: gray;
+  display: block;
+}
+
+.item__name-info p:nth-child(3) {
+  margin-left: 30px;
+}
+
+.item__name-info p:nth-child(3)::after {
+  position: absolute;
+  content: "";
+  left: -15px;
+  border-radius: 50%;
+  bottom: calc(50% - 6px);
+  width: 10px;
+  height: 10px;
+  background-color: #3da700;
+  display: block;
+}
+
+.item__count-options {
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.item__count-options p {
+  color: gray;
+}
+
+.item__count-options p span {
+  color: red;
+  font-family: NissanBrand-Bold;
+}
+
+.item__features {
+  margin-top: 15px;
+}
+
+.item__features ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.item__features ul li P {
+  font-size: 11px;
+  padding: 0 5px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item__features ul li P:nth-child(2)::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  border-radius: 15px;
+  width: 2px;
+  height: 11px;
+  background-color: gray;
+  display: block;
+}
+
+.item__features ul li P:nth-child(2)::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  border-radius: 15px;
+  width: 2px;
+  height: 11px;
+  background-color: gray;
+  display: block;
+}
+
+.item__features ul li:nth-child(1) p,
+.item__features ul li:nth-child(2) p,
+.item__features ul li:nth-child(3) p,
+.item__features ul li:nth-child(4) p {
+  font-family: NissanBrand-Bold;
+}
+
+.item__features ul li:nth-child(1)::before, .item__features ul li:nth-child(2)::before, .item__features ul li:nth-child(3)::before, .item__features ul li:nth-child(4)::before {
+  position: absolute;
+  display: block;
+  font-family: Iconfont !important;
+  left: 0;
+  top: -5px;
+  font-size: 20px;
+  color: gray;
+}
+
+.item__features ul li:nth-child(1)::before {
+  content: "\F156";
+}
+
+.item__features ul li:nth-child(2)::before {
+  content: "\F15C";
+}
+
+.item__features ul li:nth-child(3)::before {
+  content: "\F161";
+}
+
+.item__features ul li:nth-child(4)::before {
+  content: url("/images/Screenshot_4.png");
+  left: 1px;
+}
+
+.item__switch-block {
+  margin-top: 25px;
+}
+
+.item__price-block, .item__primery-price {
+  margin-top: 25px;
+  font-family: NissanBrand-Regular;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item__price-block p, .item__primery-price p {
+  font-size: 25px;
+  color: #222;
+}
+
+.item__price-block p:first-child, .item__primery-price p:first-child {
+  font-size: 25px;
+  font-family: NissanBrand-Regular;
+}
+
+.item__price-block p:last-child, .item__primery-price p:last-child {
+  position: relative;
+  font-size: 20px;
+  text-decoration: line-through;
+  color: #a1a1a1;
+}
+
+.item__price-block p:last-child::before, .item__primery-price p:last-child::before {
+  position: absolute;
+  content: url("/images/Screenshot_1.png");
+  right: -22px;
+  top: -5px;
+}
+
+.item__location {
+  margin-top: 25px;
+}
+
+.item__location p {
+  position: relative;
+  color: gray;
+  padding-left: 20px;
+  font-family: NissanBrand-Bold;
+}
+
+.item__location p::before {
+  position: absolute;
+  left: -3px;
+  content: url("/images/Screenshot_2.png");
+  top: -2px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.header__trade-in, .header__price-in {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  margin-bottom: 10px;
+}
+
+.header__trade-in a {
+  color: #222;
+  text-decoration: underline;
+}
+
+.trade-in__switch {
+  margin-left: 0px;
+}
+
+.trade-in__switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+.trade-in__switch input {
+  display: none;
+}
+
+/* ///////////////////////////////////////////////// */
+.trade-in__text {
+  padding: 0 15px;
+}
+
+.slider {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  cursor: unset;
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #ff0000;
+}
+
+input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #ff0000;
+  box-shadow: 0 0 1px #ff0000;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(14px);
+  transform: translateX(14px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+     
+        <div class="item">
+            <div class="item__img">
+                <img src="/images/12121212121210.png" alt="#">
+            </div>
+            <div class="item__wrapper">
+                <div class="item__name-info">
+                    <div class="item__name-info-content">
+                        <p>Murano <span>SE+</span></p>
+                        <p>2021г.</p>
+                        <p>В наличии</p>
+                    </div>
+                </div>
+                <div class="item__count-options">
+                    <p>Количество опций: <span>35</span></p>
+                </div>
+                <div class="item__features">
+                    <ul>
+                        <li>
+                            <p>3.5л</p>
+                            <p>249л.с</p>
+                            <p>Бензин</p>
+                        </li>
+                        <li>
+                            <p>Вариатор</p>
+                        </li>
+                        <li>
+                            <p>Полный привод</p>
+                        </li>
+                        <li>
+                            <p>Кросовер</p>
+                            <p>5 мест</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item__switch-block">
+               
+                    <div class="header__price-in">
+                        <label class="trade-in__switch">
+                            <input type="checkbox" id="trade-in_switch-1">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="trade-in__text">
+                            <label for="trade-in_switch-1">
+                                <h5>Стоимость в кредит</h5>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="header__trade-in">
+                        <label class="trade-in__switch">
+                            <input type="checkbox" id="trade-in_switch">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="trade-in__text">
+                            <label for="trade-in_switch">
+                                <h5>Мой автомобиль в зачёт</h5>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="item__price-block">
+                    <p>15 000 BYN</p>
+                    <p>127 550 BYN</p>
+                </div>
+                <div class="item__location">
+                    <p>NiSSAN на <span>Каменногорской,11</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item__img">
+                <img src="/images/12121212121210.png" alt="#">
+            </div>
+            <div class="item__wrapper">
+                <div class="item__name-info">
+                    <div class="item__name-info-content">
+                        <p>Murano <span>SE+</span></p>
+                        <p>2021г.</p>
+                        <p>В наличии</p>
+                    </div>
+                </div>
+                <div class="item__count-options">
+                    <p>Количество опций: <span>35</span></p>
+                </div>
+                <div class="item__features">
+                    <ul>
+                        <li>
+                            <p>3.5л</p>
+                            <p>249л.с</p>
+                            <p>Бензин</p>
+                        </li>
+                        <li>
+                            <p>Вариатор</p>
+                        </li>
+                        <li>
+                            <p>Полный привод</p>
+                        </li>
+                        <li>
+                            <p>Кросовер</p>
+                            <p>5 мест</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item__switch-block">
+               
+                    <div class="header__price-in">
+                        <label class="trade-in__switch">
+                            <input type="checkbox" id="trade-in_switch-1">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="trade-in__text">
+                            <label for="trade-in_switch-1">
+                                <h5>Стоимость в кредит</h5>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="header__trade-in">
+                        <label class="trade-in__switch">
+                            <input type="checkbox" id="trade-in_switch">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="trade-in__text">
+                            <label for="trade-in_switch">
+                                <h5>Мой автомобиль в зачёт</h5>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="item__price-block">
+                    <p>15 000 BYN</p>
+                    <p>127 550 BYN</p>
+                </div>
+                <div class="item__location">
+                    <p>NiSSAN на <span>Каменногорской,11</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item__img">
+                <img src="/images/12121212121210.png" alt="#">
+            </div>
+            <div class="item__wrapper">
+                <div class="item__name-info">
+                    <div class="item__name-info-content">
+                        <p>Murano <span>SE+</span></p>
+                        <p>2021г.</p>
+                        <p>В наличии</p>
+                    </div>
+                </div>
+                <div class="item__count-options">
+                    <p>Количество опций: <span>35</span></p>
+                </div>
+                <div class="item__features">
+                    <ul>
+                        <li>
+                            <p>3.5л</p>
+                            <p>249л.с</p>
+                            <p>Бензин</p>
+                        </li>
+                        <li>
+                            <p>Вариатор</p>
+                        </li>
+                        <li>
+                            <p>Полный привод</p>
+                        </li>
+                        <li>
+                            <p>Кросовер</p>
+                            <p>5 мест</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="item__switch-block">
+               
+                    <div class="header__price-in">
+                        <label class="trade-in__switch">
+                            <input type="checkbox" id="trade-in_switch-1">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="trade-in__text">
+                            <label for="trade-in_switch-1">
+                                <h5>Стоимость в кредит</h5>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="header__trade-in">
+                        <label class="trade-in__switch">
+                            <input type="checkbox" id="trade-in_switch">
+                            <span class="slider round"></span>
+                        </label>
+                        <div class="trade-in__text">
+                            <label for="trade-in_switch">
+                                <h5>Мой автомобиль в зачёт</h5>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="item__price-block">
+                    <p>15 000 BYN</p>
+                    <p>127 550 BYN</p>
+                </div>
+                <div class="item__location">
+                    <p>NiSSAN на <span>Каменногорской,11</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

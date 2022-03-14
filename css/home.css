@@ -1,0 +1,717 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after :focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/* -------fonts------ */
+@font-face {
+  font-family: Iconfont;
+  src: url(../fonts/Iconfont.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Regular;
+  src: url(../fonts/NissanBrand-300.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Bold;
+  src: url(../fonts/NissanBrand-400.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Bolder;
+  src: url(../fonts/NissanBrand-700.woff2);
+}
+
+/*--------------------*/
+.home-page {
+  font-family: NissanBrand-Regular;
+}
+
+.popular-models {
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.popular-models__wrapper {
+  padding: 0 100px 100px;
+}
+
+.popular-models__title {
+  padding-top: 40px;
+  margin-bottom: 40px;
+}
+
+.popular-models__title h3 {
+  font-size: 40px;
+  text-align: center;
+  font-family: NissanBrand-Bold;
+  text-transform: uppercase;
+}
+
+.popular-models__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.popular-models__item {
+  padding: 15px;
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  color: #222;
+  text-decoration: none;
+  position: relative;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.popular-models__item img {
+  width: 100%;
+}
+
+.popular-models__item h5 {
+  font-family: NissanBrand-Bold;
+  padding-top: 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
+  min-height: 50px;
+}
+
+.popular-models__item p {
+  font-size: 16px;
+  padding-bottom: 10px;
+  font-family: NissanBrand-Bold;
+}
+
+.popular-models__item .slog {
+  min-height: 50px;
+}
+
+.popular-models__item .item-container {
+  position: relative;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.popular-models__item:hover {
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  -webkit-box-shadow: 0 4px 24px 0 #b9b9b9;
+          box-shadow: 0 4px 24px 0 #b9b9b9;
+}
+
+.general-slider {
+  position: relative;
+}
+
+.swiper-container {
+  position: relative;
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 0px -40px;
+  background-repeat: no-repeat;
+}
+
+.swiper-slide img {
+  opacity: 1;
+  width: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: gray;
+  background-color: #333;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.swiper-button-prev {
+  left: 30px;
+}
+
+.swiper-button-next {
+  right: 30px;
+}
+
+.swiper-pagination {
+  border-radius: 20px;
+  padding: 15px 10px;
+  background-color: rgba(0, 0, 0, 0.199);
+  position: absolute;
+  left: calc(50% - 110px) !important;
+  max-width: 190px;
+  bottom: 15% !important;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  opacity: 1;
+  background-color: #fff;
+  padding: 4px;
+  margin: 0 7px !important;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background-color: red;
+}
+
+.slider-link {
+  position: absolute;
+  top: 50%;
+  left: 12%;
+}
+
+.slider-link div {
+  display: -ms-grid;
+  display: grid;
+}
+
+.slider-link h5 {
+  padding-bottom: 20px;
+  font-size: 40px;
+  color: #fff;
+  font-family: NissanBrand-Bold;
+}
+
+.slider-link button {
+  max-width: 180px;
+  position: relative;
+  width: 100%;
+  background-color: #c3002f;
+  color: #fff;
+  font-size: 14px;
+  font-family: NissanBrand-Bolder;
+  text-transform: uppercase;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+
+.slider-link button::after {
+  position: absolute;
+  content: "\F105";
+  font-family: Iconfont !important;
+  top: calc(50% - 7px);
+  right: 20px;
+}
+
+.slider-link button:hover {
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+  background-color: #94001e;
+}
+
+.price {
+  font-size: 12px !important;
+}
+
+.price span {
+  font-size: 16px;
+  font-family: NissanBrand-Bolder;
+}
+
+.link-more {
+  background-color: #c3002f;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.link-more a {
+  color: #fff;
+  font-size: 14px;
+}
+
+.link-more:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #94001e;
+}
+
+.link-drive {
+  background-color: #eee;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.link-drive a {
+  color: #222;
+  font-size: 14px;
+}
+
+.link-drive:hover a {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #c3002f;
+}
+
+.link-more,
+.link-drive {
+  padding: 20px;
+  margin: 15px 0;
+  font-family: NissanBrand-Bolder;
+  text-transform: uppercase;
+  position: relative;
+  cursor: pointer;
+}
+
+.link-more::after,
+.link-drive::after {
+  position: absolute;
+  content: "\F105";
+  display: block;
+  font-family: Iconfont !important;
+  right: 10px;
+  font-size: 18px;
+  top: 18px;
+}
+
+.link-more a,
+.link-drive a {
+  width: 100%;
+  height: 100%;
+  padding: 20px 0;
+}
+
+.link-more::after {
+  color: #fff;
+}
+
+.home-nissan-finance {
+  background-image: url("../../../images/home_page/finance.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;
+}
+
+.home-nissan-finance__wrapper {
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.home-nissan-finance__wrapper > div {
+  height: 400px;
+  padding: 0px 100px;
+}
+
+.home-nissan-finance__content {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.home-nissan-finance__item {
+  padding-bottom: 50px;
+}
+
+.home-nissan-finance__title {
+  margin-bottom: 20px;
+}
+
+.home-nissan-finance__title h3 {
+  font-size: 32px;
+  font-family: NissanBrand-Bold;
+}
+
+.home-nissan-finance__text p {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.home-nissan-finance__botton {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 25px;
+  padding: 20px 0px;
+}
+
+.home-nissan-finance__botton a {
+  position: relative;
+  width: 100%;
+  padding: 20px 40px 20px 20px;
+  background-color: #c3002f;
+  color: #fff;
+  font-size: 14px;
+  font-family: NissanBrand-Bolder;
+  text-transform: uppercase;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+
+.home-nissan-finance__botton a::after {
+  position: absolute;
+  content: "\F105";
+  font-family: Iconfont !important;
+  top: calc(50% - 7px);
+  right: 20px;
+}
+
+.home-nissan-finance__botton a:hover {
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+  background-color: #94001e;
+}
+
+.home-world-nissan {
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.home-world-nissan__wrapper {
+  padding: 0 100px 100px;
+}
+
+.home-world-nissan__title {
+  margin-bottom: 40px;
+}
+
+.home-world-nissan__title h3 {
+  font-size: 36px;
+  font-family: NissanBrand-Bold;
+  text-align: center;
+}
+
+.home-world-nissan__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.home-world-nissan__item {
+  padding: 16px;
+  border: 1px solid #e7e7e7;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.home-world-nissan__item:hover {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-box-shadow: 0 4px 24px 0 #b9b9b9;
+          box-shadow: 0 4px 24px 0 #b9b9b9;
+}
+
+.home-world-nissan a {
+  color: unset;
+}
+
+.home-world-nissan__img {
+  margin-bottom: 20px;
+}
+
+.home-world-nissan__img img {
+  width: 100%;
+}
+
+.home-world-nissan__text {
+  margin-bottom: 40px;
+  min-height: 60px;
+}
+
+.home-world-nissan__text p:first-child {
+  font-size: 20px;
+  font-family: NissanBrand-Bold;
+  margin-bottom: 10px;
+}
+
+.home-world-nissan__text p:nth-child(2) {
+  font-size: 14px;
+  font-family: NissanBrand-Bold;
+  margin-bottom: 15px;
+}
+
+.home-world-nissan__button div {
+  position: relative;
+  font-family: NissanBrand-Bolder;
+  color: #c3002f;
+  text-transform: uppercase;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.home-world-nissan__button div::before {
+  position: absolute;
+  content: "\F105";
+  left: 100px;
+  top: 0px;
+  font-family: Iconfont !important;
+  font-size: 15px;
+}
+
+.home-world-nissan__button div:hover {
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+  color: #94001e;
+}
+
+.home-know-more {
+  background-color: #ebebeb;
+}
+
+.home-know-more__wrapper {
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.home-know-more__content {
+  padding: 100px 100px 100px;
+}
+
+.home-know-more__title {
+  margin-bottom: 40px;
+}
+
+.home-know-more__title h3 {
+  font-size: 36px;
+  font-family: NissanBrand-Bold;
+  text-align: center;
+}
+
+.home-know-more__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px;
+}
+
+.home-know-more__item {
+  background-color: #999;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+}
+
+.home-know-more__item:hover {
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
+  background-color: #777;
+}
+
+.home-know-more__item a {
+  color: #fff;
+}
+
+.home-know-more__item a p {
+  position: relative;
+  padding: 40px 16px 40px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.home-know-more__item a p::before {
+  content: "\F143";
+  display: block;
+  font-family: Iconfont !important;
+  font-size: 50px;
+  top: -40px;
+  padding-bottom: 10px;
+}
+
+.home-know-more__item:nth-child(2) a p::before {
+  content: "\F116";
+}
+
+.home-know-more__item:nth-child(3) a p::before {
+  content: "\F145";
+}
+
+@media (max-width: 1024px) {
+  .popular-models__list {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .home-world-nissan__list {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .popular-models__wrapper {
+    padding: 40px 24px;
+  }
+  .popular-models__title h3 {
+    font-size: 28px;
+  }
+  .home-nissan-finance__content {
+    padding: 40px 24px !important;
+  }
+  .home-world-nissan__wrapper {
+    padding: 40px 24px;
+  }
+  .home-know-more__content {
+    padding: 40px 24px;
+  }
+  .home-know-more__list {
+    grid-gap: 20px;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+  .swiper-pagination {
+    border-radius: 20px;
+    padding: 5px 5px;
+    background-color: rgba(0, 0, 0, 0.199);
+    position: absolute;
+    left: calc(50% - 50px) !important;
+    max-width: 90px;
+    bottom: 5% !important;
+  }
+  .swiper-pagination .swiper-pagination-bullet {
+    padding: 0px;
+    margin: 0 2px !important;
+  }
+  .swiper-slide {
+    background-position: center;
+  }
+  .slider-link {
+    position: inherit;
+  }
+}
+
+@media (max-width: 768px) {
+  .popular-models__list {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .home-nissan-finance {
+    margin-bottom: 40px;
+  }
+  .home-world-nissan__list {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .home-know-more__list {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .home-know-more__item a p {
+    text-align: start;
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    grid-gap: 10px;
+  }
+  .home-know-more__item a p::before {
+    font-size: 30px;
+    top: 0 !important;
+    padding-bottom: 0;
+  }
+}

@@ -1,0 +1,443 @@
+@charset "UTF-8";
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after :focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/* -------fonts------ */
+@font-face {
+  font-family: Iconfont;
+  src: url(../fonts/Iconfont.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Regular;
+  src: url(../fonts/NissanBrand-300.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Bold;
+  src: url(../fonts/NissanBrand-400.woff2);
+}
+
+@font-face {
+  font-family: NissanBrand-Bolder;
+  src: url(../fonts/NissanBrand-700.woff2);
+}
+
+/*--------------------*/
+.footer {
+  font-family: NissanBrand-Regular;
+}
+
+.footer-top-nav {
+  background: #4c4c4c;
+}
+
+.footer-top-nav__wrapper {
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer-top-nav__wrapper ul {
+  padding: 20px 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 40px;
+}
+
+.footer-top-nav__wrapper ul li {
+  position: relative;
+}
+
+.footer-top-nav__wrapper ul li::before {
+  position: absolute;
+  content: "\F105";
+  color: #999;
+  font-size: 20px;
+  right: -25px;
+  top: -3px;
+  font-family: Iconfont !important;
+}
+
+.footer-top-nav__wrapper ul li:last-child::before {
+  display: none;
+}
+
+.footer-top-nav__wrapper ul li:last-child a {
+  color: #fff;
+}
+
+.footer-top-nav__wrapper ul li a {
+  color: #999;
+  font-size: 16px;
+  text-transform: uppercase;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.footer-top-nav__wrapper ul li a:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.footer-body {
+  background-color: #222;
+}
+
+.footer-body__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  max-width: 1700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer-body__wrapper a {
+  color: #fff;
+}
+
+.footer-body__list {
+  padding: 20px 50px 20px 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 60px;
+}
+
+.footer-body__list-row:nth-child(1) li:nth-child(2), .footer-body__list-row:nth-child(2) li:nth-child(2) {
+  padding-bottom: 15px;
+}
+
+.footer-body__list-row:nth-child(1) li:first-child a,
+.footer-body__list-row:nth-child(1) li:nth-child(2) a, .footer-body__list-row:nth-child(2) li:first-child a,
+.footer-body__list-row:nth-child(2) li:nth-child(2) a {
+  font-size: 16px;
+}
+
+.footer-body__list-row ul li {
+  padding: 5px 0;
+  line-height: 25px;
+}
+
+.footer-body__list-row ul li:first-child {
+  padding-bottom: 20px;
+}
+
+.footer-body__list-row ul li a {
+  font-size: 14px;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+
+.footer-body__list-row ul li a:hover {
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+  color: #c3002f;
+}
+
+.footer-body__list-row ul li.active a {
+  color: #c3002f;
+}
+
+.footer-body__buttons {
+  padding: 20px 100px 20px 10px;
+}
+
+.footer-body__buttons div {
+  padding: 10px 0;
+}
+
+.footer-body__buttons div button {
+  position: relative;
+  text-transform: uppercase;
+  font-family: NissanBrand-Bolder;
+  font-size: 14px;
+  text-align: start;
+  padding-left: 20px;
+  min-width: 250px;
+  height: 56px;
+  width: 100%;
+  max-width: 360px;
+  background-color: #fff;
+}
+
+.footer-body__buttons div button::after {
+  position: absolute;
+  content: "\F105";
+  display: block;
+  font-family: Iconfont !important;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.footer-body__buttons div:first-child button {
+  background-color: #c3002f;
+  color: #fff;
+}
+
+.footer-bottom-block {
+  background-color: #4c4c4c;
+  color: #fff;
+}
+
+.footer-bottom-block a {
+  color: #fff;
+}
+
+.footer-bottom-block__wrapper {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.footer-bottom-block__head {
+  padding: 25px 100px 0 100px;
+}
+
+.footer-bottom-block__head p {
+  font-size: 10px;
+  margin-bottom: 16px;
+}
+
+.footer-bottom-block__body {
+  padding: 25px 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 16px;
+}
+
+.footer-bottom-block__body p {
+  font-size: 10px;
+  padding-right: 15px;
+}
+
+.footer-bottom-block__body a {
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.footer-bottom-block__body a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom-block__footer {
+  padding: 0 100px 25px 100px;
+}
+
+.footer-bottom-block__footer ul {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 15px;
+}
+
+.footer-bottom-block__footer ul li a {
+  position: relative;
+  padding: 10px;
+  font-size: 25px;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.footer-bottom-block__footer ul li a::after {
+  position: absolute;
+  display: block;
+  font-family: Iconfont !important;
+  color: #5f5f5f;
+  left: -10px;
+}
+
+.footer-bottom-block__footer ul li a:hover::after {
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  color: #fff;
+}
+
+.footer-bottom-block__footer ul li:nth-child(1) a:after {
+  content: "\F161";
+}
+
+.footer-bottom-block__footer ul li:nth-child(2) a:after {
+  content: "\F167";
+}
+
+.footer-bottom-block__footer ul li:nth-child(3) a:after {
+  content: "\F15E";
+}
+
+.footer-bottom-block__footer ul li:nth-child(4) a:after {
+  content: "\F169";
+}
+
+.line {
+  border-top: solid 1px #fff;
+  height: 1px;
+}
+
+@media (max-width: 1240px) {
+  .footer-body__list {
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-body__wrapper {
+    display: unset;
+  }
+  .footer-top-nav ul {
+    padding: 20px 24px;
+  }
+  .footer-body__list {
+    display: none;
+  }
+  .footer-body__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 20px 24px;
+    grid-gap: 20px;
+  }
+  .footer-body__buttons button {
+    min-width: 200px !important;
+  }
+  .footer-bottom-block__wrapper {
+    padding: 25px 24px;
+  }
+  .footer-bottom-block__head {
+    padding: 0;
+  }
+  .footer-bottom-block__body {
+    padding: 16px 0;
+  }
+  .footer-bottom-block__footer {
+    padding: 16px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top-nav {
+    display: none;
+  }
+  .footer-body__buttons {
+    display: block;
+    padding: 20px 24px;
+    grid-gap: 20px;
+  }
+  .footer-body__buttons button {
+    min-width: 200px !important;
+    max-width: unset !important;
+  }
+  .footer-bottom-block__footer ul {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .footer-bottom-block__footer ul li a::after {
+    left: 0;
+  }
+  .footer-bottom-block__footer {
+    padding-top: 0;
+  }
+}
